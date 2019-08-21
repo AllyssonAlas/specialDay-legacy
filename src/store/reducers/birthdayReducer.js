@@ -3,10 +3,12 @@
 * ções do banco de dados e atualizar o estado dos componentes quando há qualquer alteração no banco de dados.	  *
 *****************************************************************************************************************/
 
-// Estado inicial que possui o estado de carregamento que controla a redenrização do componente, o array birthdays
-// responsavel por popular a aplicação com as informações do banco de dados e os atributos monthSelected,
-// birthdaySelected e todaysBirthdays utilizados para fazer alterações no estado e no banco de dados e o error
-// usado para mostrar erros na hora de validar alterações no banco de dados.
+// O INITIAL_STATE possui o estado inicial do aplicativo: o loading possui o estado de carregamento que controla
+// a renderização do componente App, o array de objetos birthdays possui informações refentes ao mês, a tabela e
+// outro array com os aniversários referentes a cada mês e é responsável por popular o aplicativo com as informa-
+// ções do banco de dados e os objetos monthSelected, birthdaySelected e todaysBirthdays são utilizados para fazer
+// alterações no estado da Store e no banco de dados e o error é usado para mostrar erros ao usuário no momento
+// em que ele for cadastrar um novo aniversário.
 const INITIAL_STATE = {
 	loading: true,
 	birthdays: [
@@ -29,7 +31,7 @@ const INITIAL_STATE = {
 	error: ''
 }
 
-// Reducer que atualiza o estado a qualquer alteração no banco de dados.
+// Reducer que recebe as alterações vindas da actions e atualiza o estado a qualquer alteração no banco de dados.
 export default (state = INITIAL_STATE, action) => {
 	switch (action.type) {
 		case 'FETCH_DATA':

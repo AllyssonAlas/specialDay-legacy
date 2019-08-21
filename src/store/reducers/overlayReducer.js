@@ -10,7 +10,7 @@ const INITIAL_STATE = {
 	overlayEraseBirthday: false
 }
 
-// Reducer que controla a exibição dos Overlays.
+// Reducer que recebe as alterações vindas da actions e controla a exibição dos Overlays.
 export default (state = INITIAL_STATE, action) => {
 	switch (action.type) {
 		case 'CRONTROL_OVERLAY':

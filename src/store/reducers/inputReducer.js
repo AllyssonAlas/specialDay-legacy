@@ -8,7 +8,7 @@ const INITIAL_STATE = {
 	name: '',
 }
 
-// Reducer que controla o estado dos componentes de entrada de dados.
+// Reducer que recebe as alterações vindas da actions e atualiza dos componentes de entrada de dados.
 export default (state = INITIAL_STATE, action) => {
 	switch (action.type) {
 		case 'CHANGE_DAY':
