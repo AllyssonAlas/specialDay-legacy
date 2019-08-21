@@ -1,5 +1,5 @@
 /*****************************************************************************************************************
-*  A action creator que recebe e trata as alterações dos componentes de entrada de dados da aplicação.	  		  *
+* A action creator que recebe e trata as alterações dos componentes de entrada de dados da aplicação.	  			  *
 *****************************************************************************************************************/
 
 // Action creator que controla a entrada de dados do componente que recebe a informação do dia do aniversário.

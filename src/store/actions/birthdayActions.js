@@ -1,5 +1,5 @@
 /*****************************************************************************************************************
-* A action creator responsável por receber as informações do banco de dados e envia-las ao reducer para atuali	  *
+* A action creator responsável por receber as informações do banco de dados e envia-las ao reducer para atuali-  *
 * zar o estado, e também fazer alterações no banco de dados e posteriormente enviar essas atualizações para o 	  *
 * reducer para a atualização do estado.																								  *																														  *
 *****************************************************************************************************************/
@@ -8,14 +8,15 @@
 import SQLite from 'react-native-sqlite-storage'
 import _ from 'lodash'
 
-// Import das actions creators externas usadas em outras actions creators.
+// Import das actions creators externas.
 import { controlOverlay } from './overlayActions'
 import { clearInputs } from './inputActions'
 
 // Instancia do banco de dados usado no aplicativo.
 const db = SQLite.openDatabase({ name: 'birthdays-db', createFromLocation: '~database/birthdays-db.sqlite' })
 
-// Action creator que controla o estado de carregamento do aplicativo
+// Action creator que controla o estado de carregamento do aplicativo, torna falso o atributo loading do estado do
+// Redux desabilitando a tela de loading.
 export const turnOffLoading = () => {
 	return {
 		type: 'TURN_OFF_LOADING',
@@ -32,7 +33,8 @@ export const selectMonth = (month, table) => {
 	}
 }
 
-// Action creator que seleciona o aniversário para posteriormente poder deleta-lo do banco de dados.
+// Action creator que seleciona o aniversário para posteriormente poder deleta-lo do banco de dados e do estado
+// do Redux.
 export const selectBirthday = (id, name, table) => {
 	return {
 		type: 'SELECT_BIRTHDAY',
@@ -41,7 +43,7 @@ export const selectBirthday = (id, name, table) => {
 }
 
 // Action creator que é usada para puxar as informações do banco de dados e atualizar o estado do Redux e popu-
-// lar o aplicativo com elas, é feita uma fez assim que o aplicativo é iniciado.
+// lar o aplicativo com elas, é chamado uma fez assim que o aplicativo é iniciado.
 export const fetchData = () => {
 	return (dispatch, getState) => {
 		var birthdays = getState().birthday.birthdays
@@ -72,7 +74,7 @@ export const fetchData = () => {
 }
 
 // Action creator que atualiza os aniversários do dia, é chamada quando é feita a primeira consulta no banco de
-// dados pelo método fetchData pelos métodos add e deleteBirthday que fazem alterações no banco de dados.
+// dados pelo método fetchData e pelos métodos add e deleteBirthday que fazem alterações no banco de dados.
 export const fetchTodaysBirthdays = () => {
 	return (dispatch, getState) => {
 		let d = new Date()
@@ -102,7 +104,7 @@ export const fetchTodaysBirthdays = () => {
 	}
 }
 
-// Action creator que limpa a mensagem de error da aplicação.
+// Action creator que limpa a mensagem de error do aplicativo.
 export const clearError = () => {
 	return {
 		type: 'CLEAR_ERROR',
@@ -113,7 +115,7 @@ export const clearError = () => {
 // Action creator que valida as informações antes de serem enviadas para o método que as salvará no banco de dados,
 // caso haja alguma inconsistência ele emite um erro e impede que o seja feito um novo registro no banco de dados.
 // Caso seja válida, ele limpa o estado referente ao erro, chama o método que salvará o registro no banco de dados,
-// esconde o Overlay e limpa as entradas de dados com actions creators externas.
+// esconde o Overlay e limpa as entradas de dados com action creator externa clearInputs.
 export const validateBirthday = (table, name, birthday) => {
 	return (dispatch, getState) => {
 		let day = getState().input.day
@@ -170,7 +172,7 @@ export const add = (table, name, birthday) => {
 }
 
 // Action creator que apaga um registro no banco de dados e também atualiza o estado do aplicativo e depois chama
-// o método fetchTodaysBirthdays para atualizar a lista de aniversários do  dia caso o registro apagado esteja na
+// o método fetchTodaysBirthdays para atualizar a lista de aniversários do dia caso o registro apagado esteja na
 // nessa lista.
 export const deleteBirthday = (table, id) => {
 	return (dispatch, getState) => {
