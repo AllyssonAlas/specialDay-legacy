@@ -2,6 +2,7 @@
 * Overlay usado para apagar o aniversário escolhido pelo usuário						 										  *
 *****************************************************************************************************************/
 
+// Import das bibliotecas usadas no componente.
 import React from 'react'
 import { View, StyleSheet } from 'react-native'
 import { Overlay } from 'react-native-elements'
@@ -9,8 +10,10 @@ import { H3 } from 'native-base'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
+// Import dos componentes feitos na aplicação.
 import CommonButton from '../Common/CommonButton'
 
+// Import das Actions feitas pelo componente.
 import { controlOverlay } from '../../store/actions/overlayActions'
 import { deleteBirthday } from '../../store/actions/birthdayActions'
 

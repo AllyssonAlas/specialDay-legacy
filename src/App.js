@@ -2,6 +2,8 @@
 * Ponto de partida do aplicativo, responsável por reunir e renderizar todos os componentes do aplicativo e cha-  *
 * mar o método Fetch Data que faz a primeira requisição no banco de dados para salvar seus dados no estado con-  *
 * trola do pelo Redux. Também recebe parte desses dados e os distribui para seus componentes filhos.				  *
+* Trechos que se repetem diversas vezes no código serão explicados uma única vez ou no componente App ou no pri- *
+* meiro componente da pasta em ordem alfabética.																					  *
 *****************************************************************************************************************/
 
 // Import das bibliotecas usadas no componente.

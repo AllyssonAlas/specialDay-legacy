@@ -1,6 +1,6 @@
 /*****************************************************************************************************************
 * Cabeçalho da única tela do aplicativo, nele há uma botão para exbibir o Overlay que mostra os aniversariantes  *
-* do dia.																																		  *
+* do dia. No mesmo botão também há a quantidade de aniversariantes do dia.													  *
 *****************************************************************************************************************/
 
 // Import das bibliotecas usadas no componente.
@@ -31,6 +31,8 @@ const Header = props => (
 	/>
 )
 
+// O componente Header recebe o atributo "length" do array totalTodaysBirthdays do estado controlado pelo
+// Redux e é transformado em String para evitar que o componente receba mais dados do que o necessário.
 const mapStateToProps = state => ({ totalTodaysBirthdays: state.birthday.todaysBirthdays.length.toString()})
 
 const mapDispatchToProps = dispatch => bindActionCreators({ controlOverlay }, dispatch)

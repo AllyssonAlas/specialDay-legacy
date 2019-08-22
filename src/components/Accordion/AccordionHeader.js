@@ -44,8 +44,6 @@ const AccordionHeader = props => {
 
 const mapDispatchToProps = dispatch => bindActionCreators({ controlOverlay, selectMonth }, dispatch)
 
-// Método Connect recebe o primeiro argumento como "null" pois o componente não precisa acessar o estado controlado
-// pelo Redux.
 export default connect(null, mapDispatchToProps)(AccordionHeader)
 
 const styles = StyleSheet.create({

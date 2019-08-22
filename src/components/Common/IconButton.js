@@ -2,6 +2,7 @@
 * Botão usado no cabeçalho.																												  *																																		  *
 *****************************************************************************************************************/
 
+// Import das bibliotecas usadas no componente.
 import React from 'react'
 import { StyleSheet, TouchableOpacity } from 'react-native'
 import { Button, Icon } from 'react-native-elements'

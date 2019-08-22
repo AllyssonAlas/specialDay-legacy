@@ -1,6 +1,6 @@
 /*****************************************************************************************************************
 * Componente customizado para exibir a lista do componente Accordion usado pela biblioteca Native base, no qual  *
-* esconde e mostra listas de dados.																																  *
+* esconde e mostra listas de dados.																										  *
 *****************************************************************************************************************/
 
 // Import das bibliotecas usadas no componente.
@@ -75,6 +75,8 @@ const AccordionContent = props => {
 
 const mapDispatchToProps = dispatch => bindActionCreators({ controlOverlay, selectBirthday }, dispatch)
 
+// Método Connect recebe o primeiro argumento como "null" pois o componente não precisa acessar o estado controlado
+// pelo Redux.
 export default connect(null, mapDispatchToProps)(AccordionContent)
 
 const styles = StyleSheet.create({

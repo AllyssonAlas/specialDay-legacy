@@ -2,6 +2,7 @@
 * Botão usado nos Overlays.																												  *																																		  *
 *****************************************************************************************************************/
 
+// Import das bibliotecas usadas no componente.
 import React from 'react'
 import { Text, Button } from 'native-base'
 
