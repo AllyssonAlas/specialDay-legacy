@@ -46,7 +46,7 @@ export const selectBirthday = (id, name, table) => {
 // lar o aplicativo com elas, é chamado uma fez assim que o aplicativo é iniciado.
 export const fetchData = () => {
 	return (dispatch, getState) => {
-		var birthdays = getState().birthday.birthdays
+		let birthdays = getState().birthday.birthdays
 
 		for (let i = 0; i < birthdays.length; i++) {
 			db.transaction((tx) => {

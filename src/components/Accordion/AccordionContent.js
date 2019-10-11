@@ -18,7 +18,7 @@ import { selectBirthday } from '../../store/actions/birthdayActions'
 const AccordionContent = props => {
 
 	// Variavel que recebe o array contendo as listar de aniversário.
-	var birthdays = props.content
+	let birthdays = props.content
 
 	// Função usada para organizar o array em ordem crescente com as datas dos aniversários.
 	function compare(a, b) {
