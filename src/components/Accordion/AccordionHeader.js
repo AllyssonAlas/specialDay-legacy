@@ -1,9 +1,3 @@
-/*****************************************************************************************************************
-* Cabeçalho customizado do componente Accordion usado pela biblioteca Native base, no qual esconde e mostra lis- *
-* tas de dados.																																  *
-*****************************************************************************************************************/
-
-// Import das bibliotecas usadas no componente.
 import React from 'react'
 import { View, StyleSheet, TouchableOpacity } from 'react-native'
 import { Badge, Icon } from 'react-native-elements'
@@ -11,7 +5,6 @@ import { H3 } from 'native-base'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
-// Import das Actions feitas pelo componente.
 import { controlOverlay } from '../../store/actions/overlayActions'
 import { selectMonth } from '../../store/actions/birthdayActions'
 

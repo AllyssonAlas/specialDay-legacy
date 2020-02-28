@@ -1,11 +1,3 @@
-/*****************************************************************************************************************
-* Overlay é um componente que aparece como um pop-up e serve para diversos fins, esse overlay em questão é usado *
-* para adicionar novos aniversários, e para isso recebendo parâmetros como o mês e a tabela de onde será salvo   *
-* no banco de dados e também tem componentes de entrada de dados com o estado controlado pelo Redux para que o	  *
-* usuário possa inserir essas informações e também conta com uma mensagem de erro para validação.					  *
-*****************************************************************************************************************/
-
-// Import das bibliotecas usadas no componente.
 import React from 'react'
 import { View, StyleSheet } from 'react-native'
 import { Overlay, Input } from 'react-native-elements'
@@ -13,10 +5,8 @@ import { H3, Text } from 'native-base'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
-// Import dos componentes feitos na aplicação.
 import CommonButton from '../Common/CommonButton'
 
-// Import das Actions feitas pelo componente.
 import { controlOverlay } from '../../store/actions/overlayActions'
 import { changeDay, changeName, clearInputs } from '../../store/actions/inputActions'
 import { add, validateBirthday, clearError } from '../../store/actions/birthdayActions'

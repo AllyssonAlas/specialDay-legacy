@@ -1,9 +1,3 @@
-/*****************************************************************************************************************
-* Cabeçalho da única tela do aplicativo, nele há uma botão para exbibir o Overlay que mostra os aniversariantes  *
-* do dia. No mesmo botão também há a quantidade de aniversariantes do dia.													  *
-*****************************************************************************************************************/
-
-// Import das bibliotecas usadas no componente.
 import React from 'react'
 import { StyleSheet } from 'react-native'
 import { Header as Head } from 'react-native-elements'
@@ -11,13 +5,10 @@ import { Text } from 'native-base'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
-// Import dos componentes feitos na aplicação.
 import IconButton from './Common/IconButton'
 
-// Import das Actions feitas pelo componente.
 import { controlOverlay } from '../store/actions/overlayActions'
 
-// Feito feito em formato de função pois não precisa usar o ciclo de vida de um componente React.
 const Header = props => (
 	<Head
 		containerStyle={styles.container}
@@ -31,8 +22,6 @@ const Header = props => (
 	/>
 )
 
-// O componente Header recebe o atributo "length" do array totalTodaysBirthdays do estado controlado pelo
-// Redux e é transformado em String para evitar que o componente receba mais dados do que o necessário.
 const mapStateToProps = state => ({ totalTodaysBirthdays: state.birthday.todaysBirthdays.length.toString()})
 
 const mapDispatchToProps = dispatch => bindActionCreators({ controlOverlay }, dispatch)
